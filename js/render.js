@@ -67,7 +67,7 @@ function renderHome() {
         <div class="highlight-card" data-goto-product="${p.id}">
           <div class="thumb-wrap">
             <img class="thumb" src="${p.image}" alt="${p.name}" />
-            ${p.tag ? `<span class="badge">🔥 ${p.tag}</span>` : ""}
+            ${p.tag ? `<span class="badge ${p.tag === "Novidade" ? "new" : ""}">${p.tag === "Novidade" ? "" : "🔥 "}${p.tag}</span>` : ""}
           </div>
           <div class="name">${p.name}</div>
           <div class="from">A partir de</div>

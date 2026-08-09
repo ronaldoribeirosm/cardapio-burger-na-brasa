@@ -1,4 +1,4 @@
-# Cardápio Digital — Burger na Brasa
+# Cardápio Digital — Revoada Lanches
 
 Réplica visual e funcional (front-end apenas) de um cardápio digital de
 hamburgueria no estilo dos grandes apps de delivery: navegação por
@@ -20,9 +20,10 @@ controle do dono do negócio.
 Uma SPA (Single Page Application) em HTML/CSS/JS puro, sem framework e
 sem build step, com roteamento por hash e todo o estado (carrinho,
 endereço, forma de pagamento) mantido em memória e `localStorage`. Os
-dados do cardápio ficam em um único arquivo (`js/data.js`), e as imagens
-de produto são placeholders SVG prontos para serem substituídos pelas
-fotos reais do estabelecimento.
+dados do cardápio ficam em um único arquivo (`js/data.js`). As fotos de
+produto são imagens de banco gratuito (Pexels, uso livre sem atribuição
+obrigatória) escolhidas para representar o estilo "lanche de podrão" —
+prontas para serem substituídas pelas fotos reais do estabelecimento.
 
 ## Telas implementadas
 
@@ -68,9 +69,16 @@ flowchart LR
 
 ## Personalização
 
-- Troque as imagens em `assets/products/` e `assets/banner/` pelas fotos reais do estabelecimento (mesma proporção dos placeholders).
+- Troque as imagens em `assets/products/` e `assets/banner/` pelas fotos reais do estabelecimento (mesma proporção das atuais).
 - Edite `js/data.js` para ajustar cardápio, categorias, preços e adicionais.
 - Cores e tipografia ficam centralizadas em `:root` no topo de `css/style.css`.
+
+## Créditos de imagem
+
+Fotos de produto e banner: banco de imagens gratuito [Pexels](https://www.pexels.com)
+(licença livre para uso comercial, sem atribuição obrigatória). São imagens
+de banco para fins de demonstração — substitua pelas fotos reais do
+estabelecimento antes de usar em produção.
 
 ## Licença
 

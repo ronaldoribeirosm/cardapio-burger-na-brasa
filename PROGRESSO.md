@@ -32,17 +32,36 @@
 - **Sem auditoria de acessibilidade** (contraste, navegação por teclado,
   leitores de tela).
 - **Sem teste cross-browser** (Firefox, Safari) — só Chromium.
-- **Imagens são todas placeholders SVG genéricos** — precisam ser
-  substituídas pelas fotos reais do estabelecimento (mesma proporção:
-  quadradas para produtos, larga para o banner).
-- Publicação no GitHub Pages (se desejada) ainda não foi configurada nesta
-  sessão até este ponto do log.
+- ~~Imagens são todas placeholders SVG genéricos~~ — ver atualização abaixo.
+- ~~Publicação no GitHub Pages~~ — ver atualização abaixo.
 
 ## Decisões pendentes (do usuário, não técnicas)
 
-- Nome/marca a usar no cardápio: o site de origem mostrava "McCoy's Burger"
-  no momento da captura (a loja parece ter mudado de identidade visual em
-  relação à URL `o-burger-na-brasa`); o projeto usa "Burger na Brasa" como
-  placeholder — trocar em `js/data.js` (`STORE.name`) pela marca definitiva.
 - Se este projeto vai virar produto real (com backend, pagamento de
   verdade, etc.) ou permanece como peça de portfólio/demonstração visual.
+
+## Atualização — rebranding e cardápio "de podrão"
+
+- Marca trocada de "Burger na Brasa" para **Revoada Lanches**, a pedido do
+  usuário (`js/data.js` → `STORE.name`).
+- Cardápio reescrito para o estilo lanchonete/podrão brasileiro: kits com
+  mini burgers (sliders) + fritas + anéis de cebola, X-Burger/X-Salada/
+  X-Bacon/X-Tudo/X-Egg, cachorro-quente simples e completo, porções e
+  bebidas — substituindo o cardápio de hamburgueria "gourmet" anterior.
+- Imagens placeholder (SVG genéricos) substituídas por fotos reais de
+  comida do banco gratuito **Pexels** (licença livre, sem atribuição
+  obrigatória) — uma foto por produto, escolhida por busca textual, não
+  geradas nem fotografadas pelo estabelecimento real. Continuam sendo
+  fotos de banco, não do restaurante de verdade — trocar antes de usar em
+  produção. Créditos e link da licença no README.
+- **GitHub Pages foi ativado nesta sessão** (`gh api .../pages`, branch
+  `main`, path `/`) e o build de fato aconteceu (`status: built`
+  confirmado via polling da API) — o site está no ar em
+  `https://ronaldoribeirosm.github.io/cardapio-burger-na-brasa/` e foi
+  aberto e conferido visualmente no navegador real do usuário
+  (claude-in-chrome), não só via Playwright headless.
+- Não validado nesta atualização: as novas imagens não foram checadas uma
+  a uma quanto a licença individual da foto (confiei na licença geral do
+  Pexels, que é permissiva) — se este projeto virar produto comercial de
+  verdade, vale revisar a licença de cada foto específica antes de manter
+  em produção por muito tempo.
