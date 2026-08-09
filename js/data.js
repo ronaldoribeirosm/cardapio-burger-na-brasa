@@ -1,0 +1,205 @@
+// Dados mockados do cardápio — troque as imagens em assets/products e assets/banner
+// pelas fotos reais do estabelecimento. Nenhuma chamada de rede é feita: tudo roda
+// no navegador, sem backend.
+
+const STORE = {
+  name: "Burger na Brasa",
+  address: "Rua das Brasas, 123 — Centro",
+  city: "Campos do Jordão, SP",
+  logo: "assets/banner/logo-placeholder.svg",
+  banner: "assets/banner/banner-placeholder.svg",
+  openUntil: "23:59",
+  cashbackPct: 4,
+  deliveryEta: "50min - 1h30",
+  minOrder: 18.9,
+};
+
+const CATEGORIES = [
+  "Especiais da Casa",
+  "Smash Burgers",
+  "Hambúrgueres",
+  "Combos Premium",
+  "Porções",
+  "Bebidas",
+  "Sobremesas",
+];
+
+const PRODUCTS = [
+  {
+    id: "cheese-bacon-smash",
+    category: "Smash Burgers",
+    mostOrdered: true,
+    name: "Cheese Bacon (Smash)",
+    tag: "O favorito!",
+    shortDesc: "Blend smash 90g, queijo cheddar, bacon crocante e pão brioche.",
+    description:
+      "Smash prensado na chapa quente, com casquinha dourada e suculência por dentro. Vem com queijo cheddar derretido, fatias generosas de bacon e pão brioche tostado na manteiga.",
+    price: 29.9,
+    image: "assets/products/cheese-bacon.svg",
+    modifierGroups: [
+      {
+        id: "turbine",
+        title: "Turbine com:",
+        type: "single",
+        max: 1,
+        options: [{ id: "ovo-frito", name: "Ovo Frito", price: 5.9 }],
+      },
+      {
+        id: "maionese",
+        title: "Escolha uma Maionese",
+        type: "multi",
+        max: 5,
+        options: [
+          { id: "sem-maionese", name: "Não quero Maionese!", price: 0 },
+          { id: "maionese-grill", name: "Maionese Especial Grill Defumada", price: 3.9 },
+          { id: "maionese-ervas", name: "Maionese de Ervas Finas", price: 3.9 },
+        ],
+      },
+    ],
+  },
+  {
+    id: "classico-salada-bacon",
+    category: "Hambúrgueres",
+    mostOrdered: true,
+    name: "Clássico Salada/Bacon",
+    shortDesc: "Blend 120g, queijo, alface, tomate e bacon.",
+    description:
+      "O clássico da casa: blend grelhado no ponto, queijo cheddar, alface americana, tomate fresco e bacon crocante no pão brioche.",
+    price: 47.9,
+    image: "assets/products/classico-salada.svg",
+    modifierGroups: [
+      {
+        id: "ponto",
+        title: "Escolha o ponto",
+        type: "single",
+        max: 1,
+        options: [
+          { id: "mal-passado", name: "Mal passado", price: 0 },
+          { id: "ao-ponto", name: "Ao ponto", price: 0 },
+          { id: "bem-passado", name: "Bem passado", price: 0 },
+        ],
+      },
+    ],
+  },
+  {
+    id: "classico-salada",
+    category: "Hambúrgueres",
+    mostOrdered: true,
+    name: "Clássico Salada",
+    shortDesc: "Blend 120g, queijo, alface e tomate.",
+    description: "Blend grelhado, queijo cheddar, alface americana e tomate fresco no pão brioche.",
+    price: 44.9,
+    image: "assets/products/classico.svg",
+    modifierGroups: [],
+  },
+  {
+    id: "cheese-burger-smash",
+    category: "Smash Burgers",
+    mostOrdered: true,
+    name: "Cheese Burger (Smash)",
+    shortDesc: "Blend smash 90g e queijo cheddar duplo.",
+    description: "Smash prensado na chapa com dupla camada de queijo cheddar derretido.",
+    price: 22.9,
+    image: "assets/products/cheese-burger.svg",
+    modifierGroups: [],
+  },
+  {
+    id: "melt-crunch",
+    category: "Especiais da Casa",
+    name: "Melt & Crunch",
+    tag: "Novidade",
+    shortDesc: "Blend 150g, queijo fatiado derretido e onion crunch.",
+    description:
+      "Blend suculento de 150g grelhado no ponto perfeito, coberto por queijo fatiado derretido e uma generosa camada de cebola crocante.",
+    price: 38.9,
+    image: "assets/products/melt-crunch.svg",
+    modifierGroups: [],
+  },
+  {
+    id: "petit-gateau",
+    category: "Sobremesas",
+    name: "Petit Gâteau com Sorvete",
+    shortDesc: "Bolinho de chocolate com sorvete de creme.",
+    description:
+      "Bolinho de chocolate com exterior firme e recheio cremoso que escorre ao primeiro toque, servido morno com sorvete de creme.",
+    price: 39.9,
+    image: "assets/products/petit-gateau.svg",
+    modifierGroups: [],
+  },
+  {
+    id: "fritas-p",
+    category: "Porções",
+    name: "Fritas P",
+    shortDesc: "Porção de batata palito.",
+    description: "Porção individual de batata frita palito, crocante por fora e macia por dentro.",
+    price: 16.9,
+    image: "assets/products/fritas.svg",
+    modifierGroups: [],
+  },
+  {
+    id: "fritas-extra",
+    category: "Porções",
+    name: "Fritas Extra Crocante",
+    shortDesc: "Porção grande, aprox. 220-250g.",
+    description: "Porção grande de batata frita extra crocante, ideal para compartilhar.",
+    price: 29.9,
+    image: "assets/products/fritas-extra.svg",
+    modifierGroups: [],
+  },
+  {
+    id: "nuggets-10",
+    category: "Porções",
+    name: "10un de Nuggets",
+    shortDesc: "10 unidades de nuggets crocantes.",
+    description: "Nuggets de frango empanados e crocantes, servidos com molho à parte.",
+    price: 34.9,
+    image: "assets/products/nuggets.svg",
+    modifierGroups: [],
+  },
+  {
+    id: "guarana-lata",
+    category: "Bebidas",
+    name: "Guaraná Antarctica Zero 350ml",
+    shortDesc: "Lata gelada.",
+    description: "Refrigerante Guaraná Antarctica Zero Açúcar, lata 350ml.",
+    price: 9.9,
+    image: "assets/products/refrigerante.svg",
+    modifierGroups: [],
+  },
+  {
+    id: "coca-lata",
+    category: "Bebidas",
+    name: "Coca-Cola 350ml",
+    shortDesc: "Lata gelada.",
+    description: "Refrigerante Coca-Cola, lata 350ml.",
+    price: 9.9,
+    image: "assets/products/refrigerante2.svg",
+    modifierGroups: [],
+  },
+  {
+    id: "combo-duplo",
+    category: "Combos Premium",
+    name: "Combo Duplo Smash",
+    shortDesc: "2 smash burgers + fritas + refrigerante.",
+    description: "Dois smash burgers, uma porção de fritas para compartilhar e dois refrigerantes.",
+    price: 68.9,
+    image: "assets/products/combo.svg",
+    modifierGroups: [],
+  },
+];
+
+const PAYMENT_METHODS = {
+  online: [
+    { id: "pix", name: "PIX", icon: "📱" },
+    { id: "credito-online", name: "Cartão de Crédito", icon: "💳" },
+    { id: "apple-pay", name: "Apple Pay", icon: "🍎" },
+    { id: "google-pay", name: "Google Pay", icon: "🔺" },
+  ],
+  delivery: [
+    { id: "dinheiro", name: "Dinheiro", icon: "💵" },
+    { id: "credito-entrega", name: "Cartão de Crédito", icon: "💳" },
+    { id: "debito-entrega", name: "Cartão de Débito", icon: "💳" },
+    { id: "vale-refeicao", name: "Vale Refeição", icon: "🎫", fee: "Taxa adicional de 3%" },
+    { id: "vale-alimentacao", name: "Vale Alimentação", icon: "🎫", fee: "Taxa adicional de 3%" },
+  ],
+};
